@@ -44,7 +44,7 @@ caption: {desc}
 
             # Save thumbnail
             img_thumb = img.copy()
-            img_thumb.thumbnail((300, 300), Image.Resampling.LANCZOS)
+            img_thumb.thumbnail((600, 600), Image.Resampling.LANCZOS)
             img_thumb.save(os.path.join(thumb_dir, filename), "JPEG", quality=80)
             
             print(f"\nImages resized and saved as {filename}")
