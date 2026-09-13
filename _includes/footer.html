@@ -16,6 +16,27 @@
         <p>
           <a href="mailto:s.li@outlook.com.au">s.li@outlook.com.au</a>
         </p>
+        <h2>Have a passcode?</h2>
+          <!-- Client Access -->
+          <div style="display: flex; gap: 10px; max-width: 400px; margin-bottom: 2em;">
+              <input type="text" id="passcodeInput" placeholder="e.g. MA-10-aug" onkeypress="handleEnter(event)" style="flex-grow: 1;">
+              <button class="button primary" onclick="redirectPasscode()">Access</button>
+          </div>
+          <script>
+          function redirectPasscode() {
+              const code = document.getElementById("passcodeInput").value.trim().toLowerCase();
+              
+              if (code) {
+                  window.location.href = "/clients/" + code + ".html";
+              }
+          }
+          function handleEnter(event) {
+              if (event.key === "Enter") {
+                  redirectPasscode();
+              }
+          }
+          </script>
+
       </section>
     </div>
   </div>
