@@ -8,14 +8,14 @@ def upload_image():
     desc = input("Image Description: ")
     
     # Find next file name
-    desc_dir = 'portfolio/_images'
+    desc_dir = '_images'
     existing_nums = [
         int(f.split('.')[0]) for f in os.listdir(desc_dir) 
         if f.split('.')[0].isdigit()
     ]
     next_num = f"{max(existing_nums) + 1:02d}" if existing_nums else "01"
     filename = f"{next_num}.jpg"
-    descname = f"portfolio/_images/{next_num}.md"
+    descname = f"_images/{next_num}.md"
 
     # Get directory of images
     script_dir = os.path.dirname(os.path.abspath(__file__))
